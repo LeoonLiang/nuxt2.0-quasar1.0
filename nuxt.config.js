@@ -1,3 +1,5 @@
+import Components from 'unplugin-vue-components/webpack'
+import QuasarResolver from './webpackPlugins/QuasarResolver'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -50,18 +52,12 @@ export default {
   build: {
     analyze: true,
     transpile: ['quasar'],
-    babel: {
-      plugins: [
-        [
-          "transform-imports",
-            {
-                "quasar": {
-                    "transform": require('quasar/dist/babel-transforms/imports.js'),
-                    "preventFullImport": true
-                }
-            }
+    plugins: [
+      Components({
+        resolvers: [
+          QuasarResolver()
         ]
-      ]
-    }
+      })
+    ]
   }
 }

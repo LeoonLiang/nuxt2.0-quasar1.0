@@ -1,0 +1,1 @@
+declare module 'quasar/src/vue-plugin'
