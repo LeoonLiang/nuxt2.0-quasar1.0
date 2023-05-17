@@ -48,6 +48,20 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    analyze: true
+    analyze: true,
+    transpile: ['quasar'],
+    babel: {
+      plugins: [
+        [
+          "transform-imports",
+            {
+                "quasar": {
+                    "transform": require('quasar/dist/babel-transforms/imports.js'),
+                    "preventFullImport": true
+                }
+            }
+        ]
+      ]
+    }
   }
 }
