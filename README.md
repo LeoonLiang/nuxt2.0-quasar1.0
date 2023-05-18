@@ -6,3 +6,5 @@ This is a practical project using Nuxt2.0 and incorporating Quasar1.0. The follo
 - [x] Support for SSR (Server-Side Rendering), as well as support for related “$q” functionality
 - [x] Support for mobile, class
 - [x] Support for SASS.
+
+Helpful? Star!!!
