@@ -1,6 +1,9 @@
+/* eslint import/namespace: ['error', { allowComputed: true }] */
 import Vue from 'vue'
 import { Plugin } from "@nuxt/types";
 import Quasar from 'quasar/src/vue-plugin'
+import Notify from 'quasar/src/plugins/Notify'
+import 'quasar/src/plugins/Notify.sass'
 // 引入基础sass
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/src/css/core/animations.sass'
@@ -20,7 +23,7 @@ import 'quasar/src/css/core/dark.sass'
 import 'quasar/src/css/normalize.sass'
 
 const quasarPlugin: Plugin = ({app, ssrContext}) => {
-  Vue.use(Quasar)
+  Vue.use(Quasar, {plugins: {Notify} })
   Quasar.ssrUpdate({app, ssr: ssrContext})
   // body上platform类
   if (process.server) {

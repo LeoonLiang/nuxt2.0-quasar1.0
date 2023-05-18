@@ -7,12 +7,20 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    QBar: typeof import('quasar/src/components/bar/QBar.js')['default']
     QBtn: typeof import('quasar/src/components/btn/QBtn.js')['default']
     QCard: typeof import('quasar/src/components/card/QCard.js')['default']
     QCardSection: typeof import('quasar/src/components/card/QCardSection.js')['default']
     QChip: typeof import('quasar/src/components/chip/QChip.js')['default']
+    QDialog: typeof import('quasar/src/components/dialog/QDialog.js')['default']
+    QIcon: typeof import('quasar/src/components/icon/QIcon.js')['default']
     QInput: typeof import('quasar/src/components/input/QInput.js')['default']
+    QSpace: typeof import('quasar/src/components/space/QSpace.js')['default']
+    QTooltip: typeof import('quasar/src/components/tooltip/QTooltip.js')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+  }
+  export interface ComponentCustomProperties {
+    ClosePopup: typeof import('quasar/src/directives/ClosePopup.js')['default']
   }
 }

@@ -62,6 +62,7 @@ export default {
     plugins: [
       Components({
         dts: true,
+        directives: true,
         resolvers: [
           QuasarResolver()
         ]

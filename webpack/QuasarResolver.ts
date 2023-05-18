@@ -18,8 +18,8 @@ async function getSideEffects(componentName: string, sideEffects: string[], isLo
     await Promise.allSettled(referencedComponents.map(item => getSideEffects(item, sideEffects, isLoaded)))
   }
 }
-export default  function QuasarResolver(): ComponentResolver {
-  return {
+export default  function QuasarResolver(): ComponentResolver[] {
+  return [{
     type: 'component',
     resolve: async (name: string) => {
       try {
@@ -31,5 +31,14 @@ export default  function QuasarResolver(): ComponentResolver {
       } catch (error) {
       }
     }
-  }
+  },{
+    type: 'directive',
+    resolve: (name: string) => {
+      const path = getQuasarFullPath(name)
+      return {
+        as: name,
+        from: path
+      }
+    }
+  }]
 }
