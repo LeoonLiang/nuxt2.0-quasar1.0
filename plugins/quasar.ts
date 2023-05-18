@@ -19,6 +19,7 @@ import 'quasar/src/css/core/typography.sass'
 import 'quasar/src/css/core/visibility.sass'
 import 'quasar/src/css/core/dark.sass'
 import 'quasar/src/css/normalize.sass'
+import 'quasar/src/plugins/Notify.sass'
 
 const quasarPlugin: Plugin = ({app, ssrContext}) => {
   Vue.use(Quasar, {plugins: {Notify} })
