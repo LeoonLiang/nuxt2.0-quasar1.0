@@ -13,13 +13,27 @@
 
       </q-card-section>
     </q-card>
+    <q-input v-model="text" label="Standard" />
+
+<q-input filled v-model="text" label="Filled" />
+
+<q-input outlined v-model="text" label="Outlined" />
+
+<q-input standout v-model="text" label="Standout" />
+<q-chip icon="event">Add to calendar</q-chip>
+
 </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: 'IndexPage'
+  name: 'IndexPage',
+  setup(){
+    return {
+      text: ref('')
+    }
+  }
 })
 </script>

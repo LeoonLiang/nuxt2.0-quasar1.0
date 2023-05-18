@@ -10,6 +10,8 @@ declare module 'vue' {
     QBtn: typeof import('quasar/src/components/btn/QBtn.js')['default']
     QCard: typeof import('quasar/src/components/card/QCard.js')['default']
     QCardSection: typeof import('quasar/src/components/card/QCardSection.js')['default']
+    QChip: typeof import('quasar/src/components/chip/QChip.js')['default']
+    QInput: typeof import('quasar/src/components/input/QInput.js')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
