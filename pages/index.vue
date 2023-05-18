@@ -60,6 +60,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import { Notify } from 'quasar'
 export default defineComponent({
   name: 'IndexPage',
   setup() {
@@ -69,6 +70,10 @@ export default defineComponent({
     }
   },
   mounted() {
+    Notify.create({
+      message: '这是notify2',
+      position: this.$q.platform.is.mobile ? 'top' : 'center',
+    })
     this.$q.notify({
       message: '这是notify',
       position: this.$q.platform.is.mobile ? 'top' : 'center',

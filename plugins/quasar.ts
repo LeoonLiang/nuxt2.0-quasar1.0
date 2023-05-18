@@ -1,9 +1,7 @@
 /* eslint import/namespace: ['error', { allowComputed: true }] */
 import Vue from 'vue'
 import { Plugin } from "@nuxt/types";
-import Quasar from 'quasar/src/vue-plugin'
-import Notify from 'quasar/src/plugins/Notify'
-import 'quasar/src/plugins/Notify.sass'
+import {Quasar, Notify} from 'quasar'
 // 引入基础sass
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/src/css/core/animations.sass'
