@@ -1,3 +1,4 @@
+import { resolveModule } from 'local-pkg'
 import { ComponentResolver } from 'unplugin-vue-components'
 export default function QuasarResolver(): ComponentResolver {
   const getQuasarFunPath = require('quasar/dist/babel-transforms/imports.js')
@@ -6,7 +7,11 @@ export default function QuasarResolver(): ComponentResolver {
     resolve: (name: string) => {
       try {
         const path = getQuasarFunPath(name)
-        return { as: name, from: path }
+        const cssPath = path.replace('.js', '.sass')
+        const cssLocalPath = resolveModule(cssPath) || ''
+        return { as: name, from: path, sideEffects: cssLocalPath ? [
+          cssPath
+        ] : []}
       } catch (error) {
       }
     }

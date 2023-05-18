@@ -1,5 +1,6 @@
+import { join } from 'path'
 import Components from 'unplugin-vue-components/webpack'
-import QuasarResolver from './webpackPlugins/QuasarResolver'
+import QuasarResolver from './webpack/QuasarResolver'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -34,12 +35,18 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: [
+      '@/css/quasar.variables.scss'
+    ]
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -54,10 +61,21 @@ export default {
     transpile: ['quasar'],
     plugins: [
       Components({
+        dts: true,
         resolvers: [
           QuasarResolver()
         ]
       })
-    ]
+    ],
+    extend(config) {
+      config.module.rules.push({
+        test: /\.sass$/,
+        use: [
+          {
+            loader: join(__dirname, './webpack/sass-variables-loader.js'),
+          }
+        ],
+      })
+    }
   }
 }
