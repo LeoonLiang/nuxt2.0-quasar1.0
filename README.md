@@ -9,5 +9,3 @@ This is a practical project using Nuxt2.0 and incorporating Quasar1.0. The follo
 - [x] Support for mobile, class
 - [x] Support for SASS.
 - [x] Support icon（Some components use icon by default）.
-
-Helpful? Star!!!
