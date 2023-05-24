@@ -2,7 +2,7 @@
 This is a practical project using Nuxt2.0 and incorporating Quasar1.0. The following tasks have been completed:
 
 - [x] On-demand import of Quasar components
-- [x] On-demand import of Quasar styles(There may be some bugs)
+- [] On-demand import of Quasar styles
 - [x] On-demand import of Quasar directives
 - [x] Support for Quasar Plugins
 - [x] Support for SSR (Server-Side Rendering), as well as support for related “$q” functionality

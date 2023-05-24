@@ -21,13 +21,13 @@ async function getSideEffects(componentName: string, sideEffects: string[], isLo
 export default  function QuasarResolver(): ComponentResolver[] {
   return [{
     type: 'component',
-    resolve: async (name: string) => {
+    resolve: (name: string) => {
       try {
-        const isLoaded: string[] = []
+        // const isLoaded: string[] = []
         const path = getQuasarFullPath(name)
-        const sideEffects: string[] = []
-        await getSideEffects(name, sideEffects, isLoaded)
-        return { as: name, from: path, sideEffects}
+        // const sideEffects: string[] = []
+        // await getSideEffects(name, sideEffects, isLoaded)
+        return { as: name, from: path}
       } catch (error) {
       }
     }
