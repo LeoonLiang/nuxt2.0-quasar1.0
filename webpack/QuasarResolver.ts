@@ -34,11 +34,15 @@ export default  function QuasarResolver(): ComponentResolver[] {
   },{
     type: 'directive',
     resolve: (name: string) => {
-      const path = getQuasarFullPath(name)
-      return {
-        as: name,
-        from: path
+      try {
+        const path = getQuasarFullPath(name)
+        return {
+          as: name,
+          from: path
+        }
+      } catch (error) {
       }
+      
     }
   }]
 }
