@@ -1,4 +1,4 @@
-// import { join } from 'path'
+import { join } from 'path'
 import Components from 'unplugin-vue-components/webpack'
 import QuasarResolver from './webpack/QuasarResolver'
 export default {
@@ -74,15 +74,15 @@ export default {
         resolvers: [QuasarResolver()],
       }),
     ],
-    // extend(config) {
-    //   config.module.rules.push({
-    //     test: /\.sass$/,
-    //     use: [
-    //       {
-    //         loader: join(__dirname, './webpack/sass-variables-loader.js'),
-    //       },
-    //     ],
-    //   })
-    // },
+    extend(config) {
+      config.module.rules.push({
+        test: /\.sass$/,
+        use: [
+          {
+            loader: join(__dirname, './webpack/sass-variables-loader.js'),
+          },
+        ],
+      })
+    },
   },
 }
